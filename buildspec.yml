@@ -1,0 +1,6 @@
+version: 0.2
+
+artifacts:
+  files:
+    - '**/*'
+  name: my-pet-services-$(date +%y%m%d%H%M).zip
