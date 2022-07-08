@@ -6,7 +6,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install --lts
 node -e "console.log('Running Node.js ' + process.version)"
 node --version
-cd pet-services
+cd ../pet-services
 npm install
 node app.js
 
