@@ -20,7 +20,7 @@ var user = require('./models/users');
 
 var app = express();
 //app.listen(3000, "184.105.9.193");
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 
 http.createServer(app).listen(app.get('port'),
   function(){

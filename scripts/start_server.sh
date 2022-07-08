@@ -7,7 +7,7 @@ nvm install --lts
 node -e "console.log('Running Node.js ' + process.version)"
 node --version
 pwd
-cd ../pet-services
+cd /pet-services # Go to tge project directory
 npm install
 node app.js
 
