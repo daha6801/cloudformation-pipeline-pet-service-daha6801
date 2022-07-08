@@ -9,5 +9,5 @@ node --version
 pwd
 cd /pet-services # Go to tge project directory
 npm install
-node app.js
+nohup node /home/ubuntu/app.js &
 
