@@ -149,7 +149,7 @@
                        {
                             "IpProtocol": "tcp",
                             "FromPort": "80",
-                            "ToPort": "80",
+                            "ToPort": "443",
                             "CidrIp": "0.0.0.0/0"
                         }
                     ]
@@ -183,7 +183,21 @@
 							"FromPort": "8080",
 							"ToPort": "8080",
 							"CidrIp": "0.0.0.0/0"
-						}						
+						},
+						{
+							"IpProtocol": "tcp",
+							"FromPort": "80",
+							"ToPort": "443",
+							"CidrIp": "0.0.0.0/0"
+						},
+						{
+                            "IpProtocol": "tcp",
+                            "FromPort": "80",
+                            "ToPort": "443",
+                            "SourceSecurityGroupId": {
+                                "Fn::GetAtt": ["ElbSG", "GroupId"]
+                            }
+                        }
                     ]
             }
         },
@@ -284,23 +298,23 @@
                     }
                 ],
                 "LoadBalancerArn": {"Ref": "ELB"},
-                "Port": "80",
-                "Protocol": "HTTP"
+                "Port": "443",
+                "Protocol": "HTTPS"
             }
         },
 
         "ELBTargetGroup": {
             "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
             "Properties": {
-                "HealthCheckPath": "/",
-                "HealthCheckProtocol": "HTTP",
+                "HealthCheckPath": "/pet-services/",
+                "HealthCheckProtocol": "HTTPS",
                 "HealthCheckIntervalSeconds": 10,
                 "HealthCheckTimeoutSeconds": 5,
                 "HealthyThresholdCount": 2,
                 "UnhealthyThresholdCount": 2,
                 "TargetType": "instance",
-                "Port": 80,
-                "Protocol": "HTTP",
+                "Port": 443,
+                "Protocol": "HTTPS",
                 "VpcId": {"Ref": "Vpc"}
             }
         },
@@ -941,7 +955,7 @@
             "Value": {"Fn::Join":[
                "",
                [
-                  "http://",
+                  "https://",
                   {
                      "Fn::GetAtt":[
                         "ELB",
