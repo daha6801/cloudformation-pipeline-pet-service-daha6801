@@ -303,14 +303,6 @@
             }
         },
 
-		"SecureCertificates": {
-			"Type" : "AWS::ElasticLoadBalancingV2::ListenerCertificate",
-			"Properties" : {
-				"Certificates" : "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess",
-				"ListenerArn" : { "Ref": "ELBListener" }
-			}
-		},
-		
         "ELBTargetGroup": {
             "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
             "Properties": {
