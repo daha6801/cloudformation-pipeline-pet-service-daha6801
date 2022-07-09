@@ -306,7 +306,7 @@
         "ELBTargetGroup": {
             "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
             "Properties": {
-                "HealthCheckPath": "/pet-services/",
+                "HealthCheckPath": "/",
                 "HealthCheckProtocol": "HTTP",
                 "HealthCheckIntervalSeconds": 10,
                 "HealthCheckTimeoutSeconds": 5,
