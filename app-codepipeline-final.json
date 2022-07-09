@@ -149,7 +149,7 @@
                        {
                             "IpProtocol": "tcp",
                             "FromPort": "80",
-                            "ToPort": "443",
+                            "ToPort": "80",
                             "CidrIp": "0.0.0.0/0"
                         }
                     ]
@@ -298,23 +298,31 @@
                     }
                 ],
                 "LoadBalancerArn": {"Ref": "ELB"},
-                "Port": "443",
-                "Protocol": "HTTPS"
+                "Port": "80",
+                "Protocol": "HTTP"
             }
         },
 
+		"SecureCertificates": {
+			"Type" : "AWS::ElasticLoadBalancingV2::ListenerCertificate",
+			"Properties" : {
+				"Certificates" : "arn:aws:iam::aws:policy/ElasticLoadBalancingFullAccess",
+				"ListenerArn" : { "Ref": "ELBListener" },
+			}
+		},
+		
         "ELBTargetGroup": {
             "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
             "Properties": {
                 "HealthCheckPath": "/pet-services/",
-                "HealthCheckProtocol": "HTTPS",
+                "HealthCheckProtocol": "HTTP",
                 "HealthCheckIntervalSeconds": 10,
                 "HealthCheckTimeoutSeconds": 5,
                 "HealthyThresholdCount": 2,
                 "UnhealthyThresholdCount": 2,
                 "TargetType": "instance",
-                "Port": 443,
-                "Protocol": "HTTPS",
+                "Port": 80,
+                "Protocol": "HTTP",
                 "VpcId": {"Ref": "Vpc"}
             }
         },
@@ -955,7 +963,7 @@
             "Value": {"Fn::Join":[
                "",
                [
-                  "https://",
+                  "http://",
                   {
                      "Fn::GetAtt":[
                         "ELB",
