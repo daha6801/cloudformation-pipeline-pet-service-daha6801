@@ -19,13 +19,16 @@ var contactUsRouter = require('./routes/contactus');
 var user = require('./models/users');
 
 var app = express();
-//app.listen(3000, "184.105.9.193");
-app.set('port', process.env.PORT || 3000);
+app.listen('3000','0.0.0.0',()=>{
+      console.log("**update - server is listening on 3000 port");
+})
 
-http.createServer(app).listen(app.get('port'),
+//app.set('port', process.env.PORT || 3000);
+
+/*http.createServer(app).listen(app.get('port'),
   function(){
     console.log("Express server listening on port " + app.get('port'));
-});
+});*/
 
 // Connecting to the database using mongooose
 const url = 'mongodb+srv://user:P@ssw0rd@cluster0.4gkkd.mongodb.net/mysilly-app-database?retryWrites=true&w=majority'
