@@ -7,3 +7,5 @@ nvm install --lts
 node -e "console.log('Running Node.js ' + process.version)"
 node --version
 npm install express
+sudo apt-get install nginx
+npm install pm2 -g
