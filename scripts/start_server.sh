@@ -9,5 +9,14 @@ node --version
 pwd
 cd /pet-services # Go to tge project directory
 npm install
-nohup node /home/ubuntu/app.js &
+#nohup node app.js &
+#node app.js
+npm install pm2 -g
+sudo npm i -g pm2
+pm2 start app.js
+sudo apt-get install nginx
+nginx -v
+sudo cp /scripts/nginx-default-replace /etc/nginx/sites-enabled/default
+nginx -v
+sudo service nginx restart
 
