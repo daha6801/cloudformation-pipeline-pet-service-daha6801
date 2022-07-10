@@ -16,4 +16,5 @@ pm2 start app.js
 nginx -v
 sudo cp /scripts/nginx-default-replace /etc/nginx/sites-enabled/default
 sudo service nginx restart
+exit
 
