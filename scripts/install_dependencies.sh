@@ -8,6 +8,6 @@ node -e "console.log('Running Node.js ' + process.version)"
 node --version
 npm install express
 npm install pm2 -g
-sudo apt update
-sudo apt install nginx
-export PATH=$PATH:/usr/local/nginx/
+#sudo apt update
+#sudo apt install nginx
+#export PATH=$PATH:/usr/local/nginx/
