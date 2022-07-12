@@ -14,7 +14,7 @@ npm install
 sudo npm i -g pm2
 pm2 start app.js
 #sudo apt update
-#sudo apt-get update && sudo apt-get -y upgrade
+sudo apt-get -y update #&& sudo apt-get -y upgrade
 sudo apt-get install -y nginx
 export PATH=$PATH:/usr/local/nginx/
 nginx -v
