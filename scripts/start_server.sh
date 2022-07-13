@@ -14,10 +14,12 @@ npm install
 sudo npm i -g pm2
 pm2 start app.js
 #sudo apt update
-sudo apt-get -y update #&& sudo apt-get -y upgrade
-sudo apt-get install -y nginx
+
+sudo apt update sudo apt -y upgrade
+sudo apt install -y nginx
 export PATH=$PATH:/usr/local/nginx/
 nginx -v
+
 sudo cp /scripts/nginx-default-replace /etc/nginx/sites-enabled/default
 sudo service nginx restart
 exit
