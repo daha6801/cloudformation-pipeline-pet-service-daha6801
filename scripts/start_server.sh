@@ -16,7 +16,7 @@ pm2 start app.js
 #sudo apt update
 
 nginx -v
-sudo apt-get -y update sudo apt-get -y upgrade
+sudo apt-get update sudo apt-get -y upgrade
 sudo apt-get install -y nginx
 export PATH=$PATH:/usr/local/nginx/
 nginx -v
