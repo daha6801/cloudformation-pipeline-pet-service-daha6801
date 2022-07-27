@@ -12,9 +12,14 @@ node --version
 npm install express
 npm install pm2 -g
 
-sudo apt-get update && sudo apt-get -y upgrade
+sudo wget http://nginx.org/keys/nginx_signing.key
+sudo apt-key add nginx_signing.key
+sudo cp /scripts/sources.list-replace /etc/apt/sources.list
+sudo apt-get update
 sudo apt-get install -y nginx
-export PATH=$PATH:/usr/local/nginx/
+#export PATH=$PATH:/usr/local/nginx/
+sudo systemctl start nginx.service
+sudo systemctl status nginx.service
 nginx -v
 
 exit
