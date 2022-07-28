@@ -15,8 +15,8 @@ npm install pm2 -g
 #sudo wget http://nginx.org/keys/nginx_signing.key
 #sudo apt-key add nginx_signing.key
 #sudo cp /scripts/sources.list-replace /etc/apt/sources.list
-sudo apt-get update
-sudo apt-get install -y nginx
+sudo apt-get update 
+sudo apt install -y nginx
 export PATH=$PATH:/usr/local/nginx/
 #sudo systemctl start nginx.service
 #sudo systemctl status nginx.service
