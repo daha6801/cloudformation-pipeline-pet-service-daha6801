@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 3m
+sleep 5m
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
@@ -9,7 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install --lts
 node -e "console.log('Running Node.js ' + process.version)"
 
-sleep 3m
+sleep 5m
 
 sudo apt install npm
 node --version
