@@ -6,6 +6,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 nvm install --lts
 node -e "console.log('Running Node.js ' + process.version)"
+
+sleep 3m
+
 sudo apt install npm
 node --version
 
